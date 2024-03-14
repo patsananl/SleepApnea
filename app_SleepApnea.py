@@ -67,25 +67,25 @@ if st.session_state.tab_selected == 0:
     })
 
     # Categorical Data Encoding
-    user_input['Systolic'] = user_input['Blood_Pressure_input'].str.split('/').str[0].astype(int)
-    user_input['Diastolic'] = user_input['Blood_Pressure_input'].str.split('/').str[1].astype(int)
+    # user_input['Systolic'] = user_input['Blood_Pressure_input'].str.split('/').str[0].astype(int)
+    # user_input['Diastolic'] = user_input['Blood_Pressure_input'].str.split('/').str[1].astype(int)
 
-    user_input.drop(['Blood_Pressure_input'], axis=1, inplace=True)
+    # user_input.drop(['Blood_Pressure_input'], axis=1, inplace=True)
 
-    blood_class_conditions = [
-    (user_input['Systolic'] < 120) & (user_input['Diastolic'] < 80),
-    (user_input['Systolic'].between(120, 140)) & (user_input['Diastolic'] < 90),
-    (user_input['Systolic'] >= 140) & (user_input['Diastolic'] >= 90) | (user_input['Diastolic'] >= 80)
-    ]
+    # blood_class_conditions = [
+    # (user_input['Systolic'] < 120) & (user_input['Diastolic'] < 80),
+    # (user_input['Systolic'].between(120, 140)) & (user_input['Diastolic'] < 90),
+    # (user_input['Systolic'] >= 140) & (user_input['Diastolic'] >= 90) | (user_input['Diastolic'] >= 80)
+    # ]
 
-    labels = ['Optimal', 'Normal', 'Hypertension']
+    # labels = ['Optimal', 'Normal', 'Hypertension']
 
-    user_input['Blood_Pressure_Category'] = np.select(blood_class_conditions, labels, default='Undefined')
+    # user_input['Blood_Pressure_Category'] = np.select(blood_class_conditions, labels, default='Undefined')
 
-    user_input["Gender_input"] = user_input["Gender_input"].astype("category").cat.codes
-    user_input["Occupation_input"] = user_input["Occupation_input"].astype("category").cat.codes
-    user_input["BMI_Category_input"] = user_input["BMI_Category_input"].astype("category").cat.codes
-    user_input["Blood_Pressure_Category_input"] = user_input["Blood_Pressure_Category_input"].astype("category").cat.codes
+    # user_input["Gender_input"] = user_input["Gender_input"].astype("category").cat.codes
+    # user_input["Occupation_input"] = user_input["Occupation_input"].astype("category").cat.codes
+    # user_input["BMI_Category_input"] = user_input["BMI_Category_input"].astype("category").cat.codes
+    # user_input["Blood_Pressure_Category_input"] = user_input["Blood_Pressure_Category_input"].astype("category").cat.codes
 
     # Predicting
     prediction = model.predict(user_input)
