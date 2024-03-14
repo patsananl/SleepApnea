@@ -61,9 +61,9 @@ if st.session_state.tab_selected == 0:
         'Blood_Pressure_input': [Blood_Pressure_input],
         'Heart_Rate_input': [Heart_Rate_input],
         'Daily_Steps_input': [Daily_Steps_input],
-        'Systolic',
-        'Diastolic',
-        'Blood_Pressure_Category'
+        'Systolic' : [0],
+        'Diastolic' :[0],
+        'Blood_Pressure_Category':[0]
     })
 
     # Categorical Data Encoding
