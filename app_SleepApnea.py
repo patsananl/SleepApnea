@@ -44,7 +44,7 @@ if st.session_state.tab_selected == 0:
     Physical_Activity_Level_input = st.slider('Physical Activity Level', 30, 100, 50)
     Stress_Level_input = st.slider('Stress Level', 3, 8, 7)
     BMI_Category_input = st.selectbox('BMI Category', ("Normal", "Overweight", "Obese"), index=None, placeholder="Select BMI Category...")
-    Blood_Pressure_input = st.text_input('Blood Pressure', 'Input Your Blood Pressure (e.g. 120/80)')
+    Blood_Pressure_input = st.text_input('Blood Pressure', placeholder="Input Your Blood Pressure (e.g. 120/80)")
     Heart_Rate_input = st.number_input('Heart Rate', value = None, placeholder="Input your Heart Rate")
     Daily_Steps_input = st.number_input('Daily Steps', value=None, placeholder="Input your Daily Step")
 
