@@ -64,15 +64,15 @@ if st.session_state.tab_selected == 0:
     })
 
     # Categorical Data Encoding
-    user_input['Systolic'] = user_input['Blood_Pressure'].str.split('/').str[0].astype(int)
-    user_input['Diastolic'] = user_input['Blood_Pressure'].str.split('/').str[1].astype(int)
+    user_input['Systolic'] = user_input['Blood_Pressure_input'].str.split('/').str[0].astype(int)
+    user_input['Diastolic'] = user_input['Blood_Pressure_input'].str.split('/').str[1].astype(int)
 
-    user_input.drop(['Blood_Pressure'], axis=1, inplace=True)
+    user_input.drop(['Blood_Pressure_input'], axis=1, inplace=True)
 
-    user_input["Gender"] = user_input["Gender"].astype("category").cat.codes
-    user_input["Occupation"] = user_input["Occupation"].astype("category").cat.codes
-    user_input["BMI_Category"] = user_input["BMI_Category"].astype("category").cat.codes
-    user_input["Blood_Pressure_Category"] = user_input["Blood_Pressure_Category"].astype("category").cat.codes
+    user_input["Gender_input"] = user_input["Gender_input"].astype("category").cat.codes
+    user_input["Occupation_input"] = user_input["Occupation_input"].astype("category").cat.codes
+    user_input["BMI_Category_input"] = user_input["BMI_Category_input"].astype("category").cat.codes
+    user_input["Blood_Pressure_Category_input"] = user_input["Blood_Pressure_Category_input"].astype("category").cat.codes
 
     # Predicting
     prediction = model.predict(user_input)
