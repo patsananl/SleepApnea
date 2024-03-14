@@ -57,7 +57,7 @@ if st.session_state.tab_selected == 0:
         'Quality of Sleep': [Quality_of_Sleep],
         'Physical Activity Level': [Physical_Activity_Level],
         'Stress Level': [Stress_Level],
-        'BMI Category': [BMI_Categor],
+        'BMI Category': [BMI_Category],
         'Blood Pressure': [Blood_Pressure],
         'Heart Rate': [Heart_Rate],
         'Daily Steps': [Daily_Steps]
