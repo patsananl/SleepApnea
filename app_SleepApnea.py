@@ -60,7 +60,10 @@ if st.session_state.tab_selected == 0:
         'BMI_Category_input': [BMI_Category_input],
         'Blood_Pressure_input': [Blood_Pressure_input],
         'Heart_Rate_input': [Heart_Rate_input],
-        'Daily_Steps_input': [Daily_Steps_input]
+        'Daily_Steps_input': [Daily_Steps_input],
+        'Systolic',
+        'Diastolic',
+        'Blood_Pressure_Category'
     })
 
     # Categorical Data Encoding
@@ -68,6 +71,16 @@ if st.session_state.tab_selected == 0:
     user_input['Diastolic'] = user_input['Blood_Pressure_input'].str.split('/').str[1].astype(int)
 
     user_input.drop(['Blood_Pressure_input'], axis=1, inplace=True)
+
+    blood_class_conditions = [
+    (user_input['Systolic'] < 120) & (user_input['Diastolic'] < 80),
+    (user_input['Systolic'].between(120, 140)) & (user_input['Diastolic'] < 90),
+    (user_input['Systolic'] >= 140) & (user_input['Diastolic'] >= 90) | (user_input['Diastolic'] >= 80)
+    ]
+
+    labels = ['Optimal', 'Normal', 'Hypertension']
+
+    user_input['Blood_Pressure_Category'] = np.select(blood_class_conditions, labels, default='Undefined')
 
     user_input["Gender_input"] = user_input["Gender_input"].astype("category").cat.codes
     user_input["Occupation_input"] = user_input["Occupation_input"].astype("category").cat.codes
