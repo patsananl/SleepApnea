@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
+from sklearn.preprocessing import LabelEncoder
 
 # Load model and encoders
 with open('SleepApnea.pkl', 'rb') as file:
@@ -14,6 +15,7 @@ with open('SleepApnea.pkl', 'rb') as file:
 # Replace 'your_data.csv' with the actual file name or URL
 df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
 df = df.drop('Person ID', axis=1)
+decoded_occupation = occupation_encoder.inverse_transform([Occupation])[0]
 
 # Streamlit App
 st.title('Obstructive Sleep Apnea Prediction')
@@ -38,7 +40,7 @@ if st.session_state.tab_selected == 0:
     # User Input Form
     Gender_input = st.radio('Gender', ["Male", "Female"])
     Age_input = st.number_input('Age', value = None, placeholder="Input your age (e.g. 30)")
-    Occupation_input = st.selectbox('Occupation', Occupation)
+    Occupation_input = st.selectbox('Occupation', decoded_occupation)
     Sleep_Duration_input = st.slider('Sleep Duration', 5, 9, 7.8)
     Quality_of_Sleep_input = st.slider('Quality of Sleep', 4, 9, 7)
     Physical_Activity_Level_input = st.slider('Physical Activity Level', 30, 100, 50)
