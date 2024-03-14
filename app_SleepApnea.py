@@ -36,31 +36,31 @@ if st.session_state.tab_selected == 0:
 
 
     # User Input Form
-    Gender = st.radio('Gender', ["Male", "Female"])
-    Age = st.number_input('Age', value = None, placeholder="Input your age (e.g. 30)")
-    Occupation = st.selectbox('Occupation', Occupation)
-    Sleep_Duration = st.slider('Sleep Duration', 5, 9, 7.8)
-    Quality_of_Sleep = st.slider('Quality of Sleep', 4, 9, 7)
-    Physical_Activity_Level = st.slider('Physical Activity Level', 30, 100, 50)
-    Stress_Level = st.slider('Stress Level', 3, 8, 7)
-    BMI_Category = st.selectbox('BMI Category', ("Normal", "Overweight", "Obese"), index=None, placeholder="Select BMI Category...")
-    Blood_Pressure = st.text_input('Blood Pressure', 'Input Your Blood Pressure (e.g. 120/80)')
-    Heart_Rate = st.number_input('Heart Rate', value = None, placeholder="Input your Heart Rate")
-    Daily_Steps = st.number_input('Daily Steps', value=None, placeholder="Input your Daily Step")
+    Gender_input = st.radio('Gender', ["Male", "Female"])
+    Age_input = st.number_input('Age', value = None, placeholder="Input your age (e.g. 30)")
+    Occupation_input = st.selectbox('Occupation', Occupation)
+    Sleep_Duration_input = st.slider('Sleep Duration', 5, 9, 7.8)
+    Quality_of_Sleep_input = st.slider('Quality of Sleep', 4, 9, 7)
+    Physical_Activity_Level_input = st.slider('Physical Activity Level', 30, 100, 50)
+    Stress_Level_input = st.slider('Stress Level', 3, 8, 7)
+    BMI_Category_input = st.selectbox('BMI Category', ("Normal", "Overweight", "Obese"), index=None, placeholder="Select BMI Category...")
+    Blood_Pressure_input = st.text_input('Blood Pressure', 'Input Your Blood Pressure (e.g. 120/80)')
+    Heart_Rate_input = st.number_input('Heart Rate', value = None, placeholder="Input your Heart Rate")
+    Daily_Steps_input = st.number_input('Daily Steps', value=None, placeholder="Input your Daily Step")
 
     # Create a DataFrame for the user input
     user_input = pd.DataFrame({
-        'Gender': [Gender],
-        'Age': [Age],
-        'Occupation': [Occupation],
-        'Sleep Duration': [Sleep_Duration],
-        'Quality of Sleep': [Quality_of_Sleep],
-        'Physical Activity Level': [Physical_Activity_Level],
-        'Stress Level': [Stress_Level],
-        'BMI Category': [BMI_Category],
-        'Blood Pressure': [Blood_Pressure],
-        'Heart Rate': [Heart_Rate],
-        'Daily Steps': [Daily_Steps]
+        'Gender': [Gender_input],
+        'Age': [Age_input],
+        'Occupation': [Occupation_input],
+        'Sleep Duration': [Sleep_Duration_input],
+        'Quality of Sleep': [Quality_of_Sleep_input],
+        'Physical Activity Level': [Physical_Activity_Level_input],
+        'Stress Level': [Stress_Level_input],
+        'BMI Category': [BMI_Category_input],
+        'Blood Pressure': [Blood_Pressure_input],
+        'Heart Rate': [Heart_Rate_input],
+        'Daily Steps': [Daily_Steps_input]
     })
 
     # Categorical Data Encoding
