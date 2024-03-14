@@ -50,17 +50,17 @@ if st.session_state.tab_selected == 0:
 
     # Create a DataFrame for the user input
     user_input = pd.DataFrame({
-        'Gender': [Gender_input],
-        'Age': [Age_input],
-        'Occupation': [Occupation_input],
-        'Sleep Duration': [Sleep_Duration_input],
-        'Quality of Sleep': [Quality_of_Sleep_input],
-        'Physical Activity Level': [Physical_Activity_Level_input],
-        'Stress Level': [Stress_Level_input],
-        'BMI Category': [BMI_Category_input],
-        'Blood Pressure': [Blood_Pressure_input],
-        'Heart Rate': [Heart_Rate_input],
-        'Daily Steps': [Daily_Steps_input]
+        'Gender_input': [Gender_input],
+        'Age_input': [Age_input],
+        'Occupation_input': [Occupation_input],
+        'Sleep_Duration_input': [Sleep_Duration_input],
+        'Quality_of_Sleep_input': [Quality_of_Sleep_input],
+        'Physical_Activity_Level_input': [Physical_Activity_Level_input],
+        'Stress_Level_input': [Stress_Level_input],
+        'BMI_Category_input': [BMI_Category_input],
+        'Blood_Pressure_input': [Blood_Pressure_input],
+        'Heart_Rate_input': [Heart_Rate_input],
+        'Daily_Steps_input': [Daily_Steps_input]
     })
 
     # Categorical Data Encoding
