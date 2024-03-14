@@ -8,7 +8,7 @@ import pickle
 
 # Load model and encoders
 with open('SleepApnea.pkl', 'rb') as file:
-    model, 'Gender', 'Age', 'Occupation', 'BMI_Category', 'Blood_Pressure' = pickle.load(file)
+    model, Gender, Age, Occupation, BMI_Category, Blood_Pressure = pickle.load(file)
 
 # Load your DataFrame
 # Replace 'your_data.csv' with the actual file name or URL
