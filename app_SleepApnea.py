@@ -38,7 +38,7 @@ if st.session_state.tab_selected == 0:
     # User Input Form
     Gender_input = st.radio('Gender', ["Male", "Female"])
     Age_input = st.number_input('Age', value = None, placeholder="Input your age (e.g. 30)")
-    Occupation_input = st.selectbox('Occupation', Occupation)
+    Occupation_input = st.selectbox('Occupation', ["Nurse", "Doctor", "Engineer", "Lawyer", "Teacher", "Acccountant", "Saleperson"])
     Sleep_Duration_input = st.slider('Sleep Duration', 5, 9, 7.8)
     Quality_of_Sleep_input = st.slider('Quality of Sleep', 4, 9, 7)
     Physical_Activity_Level_input = st.slider('Physical Activity Level', 30, 100, 50)
