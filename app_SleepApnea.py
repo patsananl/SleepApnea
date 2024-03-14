@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -7,7 +8,7 @@ import pickle
 
 # Load model and encoders
 with open('SleepApnea.pkl', 'rb') as file:
-    model, Gender, Age, Occupation, BMI Category, Blood Pressure == pickle.load(file)
+    model, 'Gender', 'Age', 'Occupation', 'BMI_Category', 'Blood_Pressure' = pickle.load(file)
 
 # Load your DataFrame
 # Replace 'your_data.csv' with the actual file name or URL
@@ -52,14 +53,14 @@ if st.session_state.tab_selected == 0:
         'Gender': [Gender],
         'Age': [Age],
         'Occupation': [Occupation],
-        'Sleep_Duration': [Sleep Duration],
-        'Quality_of_Sleep': [Quality of Sleep],
-        'Physical_Activity_Level': [Physical Activity Level],
-        'Stress_Level': [Stress Level],
-        'BMI_Category': [BMI Categor],
-        'Blood_Pressure': [Blood Pressure],
-        'Heart_Rate': [Heart Rate],
-        'Daily_Steps': [Daily Steps]
+        'Sleep Duration': [Sleep_Duration],
+        'Quality of Sleep': [Quality_of_Sleep],
+        'Physical Activity Level': [Physical_Activity_Level],
+        'Stress Level': [Stress_Level],
+        'BMI Category': [BMI_Categor],
+        'Blood Pressure': [Blood_Pressure],
+        'Heart Rate': [Heart_Rate],
+        'Daily Steps': [Daily_Steps]
     })
 
     # Categorical Data Encoding
@@ -163,3 +164,4 @@ elif st.session_state.tab_selected == 2:
         plt.xlabel(feature_for_visualization)
         plt.ylabel('Number of Focus Group')
         st.pyplot(fig)
+
